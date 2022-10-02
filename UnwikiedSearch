@@ -1,0 +1,57 @@
+! name: Unwikied Search 2022.10.02-1
+! description: A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
+! public: true
+! author: Arbakato
+! avatar: 14661d
+! homepage: https://github.com/Arbakato/UnwikiedSearch
+! issues: https://github.com/Arbakato/UnwikiedSearch/issues
+! version: 2022.10.02-1
+
+! Discards everything
+$discard
+
+! Discards sites starting with "kids.". Although some might be good, I prefer sites with more content than these tend to offer.
+|https://kids.$discard
+
+! Science and Medicine
+$boost=1,site=ebsco.com
+$boost=1,site=nih.gov
+$boost=1,site=medlineplus.gov
+$boost=1,site=scholarpedia.org
+$boost=1,site=mayoclinic.org
+
+! Encyclopedias. Should be on top since they work as introductions to certain topics.
+$boost=3,site=britannica.com
+$boost=2,site=encyclopedia.com
+$boost=2,site=biography.com
+$boost=2,site=eol.org
+$boost=1,site=plato.stanford.edu
+
+! History
+$boost=2,site=biography.com
+/obituaries/$boost=2,site=washingtonpost.com
+
+! Journals
+$boost=1,site=jstor.org
+$boost=1,site=nature.com
+$boost=1,site=researchgate.net
+$boost=1,site=sciencedirect.com
+$boost=1,site=aeaweb.org
+$boost=1,site=thelancet.com
+
+
+! Magazines
+$boost=1,site=nationalgeographic.com
+
+! Other sites. Boost 3 because they tend to be lower on the list.
+/fotw/flags/$boost=3,site=crwflags.com
+$boost=3,site=heraldry-wiki.com
+$boost=3,site=medals.org.uk
+$boost=3,site=tmg110.tripod.com
+
+! Open Access Books
+$boost=1,site=doabooks.org
+$boost=1,site=libretexts.org
+$boost=1,site=milneopentextbooks.org
+$boost=1,site=open.umn.edu
+$boost=1,site=openstax.org
