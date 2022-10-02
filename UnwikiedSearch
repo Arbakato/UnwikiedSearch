@@ -1,11 +1,11 @@
-! name: Unwikied Search 2022.10.02-1
-! description: A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
+! name: Unwikied Search 
+! description: (Last update: 2022.10.02) A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
-! version: 2022.10.02-1
+! version: 2022.10.02-2
 
 ! Discards everything
 $discard
@@ -38,6 +38,8 @@ $boost=1,site=researchgate.net
 $boost=1,site=sciencedirect.com
 $boost=1,site=aeaweb.org
 $boost=1,site=thelancet.com
+! Is academia.edu good? At least it's free...
+$boost=1,site=academia.edu
 
 
 ! Magazines
