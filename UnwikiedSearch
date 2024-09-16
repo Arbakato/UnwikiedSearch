@@ -1,11 +1,11 @@
 ! name: Unwikied Search 
-! description: (Last update: 2022.10.02) A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
+! description: (Last update: 2024.09.15) A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
-! version: 2022.10.02-2
+! version: 2024.09.15
 
 ! Discards everything
 $discard
@@ -19,6 +19,7 @@ $boost=1,site=nih.gov
 $boost=1,site=medlineplus.gov
 $boost=1,site=scholarpedia.org
 $boost=1,site=mayoclinic.org
+$boost=1,site=wikidoc.org
 
 ! Encyclopedias. Should be on top since they work as introductions to certain topics.
 $boost=3,site=britannica.com
@@ -28,8 +29,8 @@ $boost=2,site=eol.org
 $boost=1,site=plato.stanford.edu
 
 ! History
-$boost=2,site=biography.com
-/obituaries/$boost=2,site=washingtonpost.com
+$boost=1,site=biography.com
+/obituaries/$boost=1,site=washingtonpost.com
 
 ! Journals
 $boost=1,site=jstor.org
@@ -41,15 +42,21 @@ $boost=1,site=thelancet.com
 ! Is academia.edu good? At least it's free...
 $boost=1,site=academia.edu
 
-
-! Magazines
+! General magazines
 $boost=1,site=nationalgeographic.com
 
+! Science magazines
+$boost=1,site=sci.news
+$boost=1,site=phys.org
+/article/$boost=1,site=scientificamerican.com
+/content/article/$boost=1,site=science.org
+/article/$boost=1,site=sciencenews.org
+
 ! Other sites. Boost 3 because they tend to be lower on the list.
-/fotw/flags/$boost=3,site=crwflags.com
 $boost=3,site=heraldry-wiki.com
 $boost=3,site=medals.org.uk
 $boost=3,site=tmg110.tripod.com
+/fotw/flags/$boost=3,site=crwflags.com
 
 ! Open Access Books
 $boost=1,site=doabooks.org
