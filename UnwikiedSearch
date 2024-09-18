@@ -1,11 +1,11 @@
 ! name: Unwikied Search 
-! description: (Last update: 2024.09.15) A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
+! description: (Last update: 2024.09.17) A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
-! version: 2024.09.15
+! version: 2024.09.17
 
 ! Discards everything
 $discard
@@ -20,6 +20,7 @@ $boost=1,site=medlineplus.gov
 $boost=1,site=scholarpedia.org
 $boost=1,site=mayoclinic.org
 $boost=1,site=wikidoc.org
+$boost=1,site=science.nasa.gov
 
 ! Encyclopedias. Should be on top since they work as introductions to certain topics.
 $boost=3,site=britannica.com
@@ -31,6 +32,7 @@ $boost=1,site=plato.stanford.edu
 ! History
 $boost=1,site=biography.com
 /obituaries/$boost=1,site=washingtonpost.com
+$boost=1,site=medieval.eu
 
 ! Journals
 $boost=1,site=jstor.org
@@ -39,8 +41,13 @@ $boost=1,site=researchgate.net
 $boost=1,site=sciencedirect.com
 $boost=1,site=aeaweb.org
 $boost=1,site=thelancet.com
+
 ! Is academia.edu good? At least it's free...
 $boost=1,site=academia.edu
+
+! Testing these journals for now...
+/document/doi/$boost=1,site=egruyter.com
+/index.php/jhs/article/view/$boost=1,site=jhs.iihr.res.in
 
 ! General magazines
 $boost=1,site=nationalgeographic.com
@@ -52,11 +59,29 @@ $boost=1,site=phys.org
 /content/article/$boost=1,site=science.org
 /article/$boost=1,site=sciencenews.org
 
-! Other sites. Boost 3 because they tend to be lower on the list.
-$boost=3,site=heraldry-wiki.com
-$boost=3,site=medals.org.uk
-$boost=3,site=tmg110.tripod.com
-/fotw/flags/$boost=3,site=crwflags.com
+! Other sites. Boost 2 because they tend to be lower on the list.
+$boost=2,site=heraldry-wiki.com
+$boost=2,site=medals.org.uk
+$boost=2,site=tmg110.tripod.com
+
+! Testing a boost of 1
+/fotw/flags/$boost=1,site=crwflags.com
+
+! Economics
+/PAEReview/$boost=1,site=paecon.net
+/ojs/index.php/te/article/$boost=1,site=econtheory.org
+
+! Open Access Journals
+/bjoc/articles/$boost=1,site=beilstein-journals.org
+/doi/$boost=1,site=royalsocietypublishing.org
+/bio/article/$boost=1,site=journals.biologists.com
+$boost=1,site=journals.plos.org
+$boost=1,site=bmjopen.bmj.com
+/doi/$boost=1,site=science.org
+/gigascience/article/doi/$boost=1,site=academic.oup.com
+$boost=1,site=medsci.org
+/eid/article/$boost=1,site=wwwnc.cdc.gov
+/articles/view/$boost=1,site=jci.org
 
 ! Open Access Books
 $boost=1,site=doabooks.org
