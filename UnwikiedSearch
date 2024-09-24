@@ -1,11 +1,12 @@
 ! name: Unwikied Search 
-! description: (Last update: 2024.09.17) A Goggle meant as a replacement for Wikipedia. Only returns results from other reputable encyclopedias, biography sites, journals, research sites, etc. NOTE: I'm still learning how to create goggles, and I don't know that many sites that could offer the content I or other people might want, so this is a work in progress. New sites can be added or changed. Feel free to give some feedback on Github.
+! description: (Last update: 2024.09.24) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
-! version: 2024.09.17
+! license: GPL-3.0 license
+! version: 2024.09.24
 
 ! Discards everything
 $discard
@@ -23,7 +24,7 @@ $boost=1,site=wikidoc.org
 $boost=1,site=science.nasa.gov
 
 ! Encyclopedias. Should be on top since they work as introductions to certain topics.
-$boost=3,site=britannica.com
+$boost=2,site=britannica.com
 $boost=2,site=encyclopedia.com
 $boost=2,site=biography.com
 $boost=2,site=eol.org
@@ -43,7 +44,7 @@ $boost=1,site=aeaweb.org
 $boost=1,site=thelancet.com
 
 ! Is academia.edu good? At least it's free...
-$boost=1,site=academia.edu
+$downrank=1,site=academia.edu
 
 ! Testing these journals for now...
 /document/doi/$boost=1,site=egruyter.com
@@ -82,6 +83,15 @@ $boost=1,site=bmjopen.bmj.com
 $boost=1,site=medsci.org
 /eid/article/$boost=1,site=wwwnc.cdc.gov
 /articles/view/$boost=1,site=jci.org
+/en/content/$boost=1,site=pubs.rsc.org
+
+! MSD
+
+/monographs/$boost=1,site=merckindex.rsc.org
+/proffesional/$boost=1,site=msdmanuals.com
+/home/$boost=1,site=msdmanuals.com
+$boost=1,site=msdvetmanual.com
+
 
 ! Open Access Books
 $boost=1,site=doabooks.org
