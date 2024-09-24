@@ -6,7 +6,7 @@
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
 ! license: GPL-3.0 license
-! version: 2024.09.24
+! version: 2024.09.24-1
 
 ! Discards everything
 $discard
@@ -34,6 +34,10 @@ $boost=1,site=plato.stanford.edu
 $boost=1,site=biography.com
 /obituaries/$boost=1,site=washingtonpost.com
 $boost=1,site=medieval.eu
+
+! History Today
+/archive/interview/$discard,site=historytoday.com
+/archive/$boost=1,site=historytoday.com
 
 ! Journals
 $boost=1,site=jstor.org
@@ -71,6 +75,15 @@ $boost=2,site=tmg110.tripod.com
 ! Economics
 /PAEReview/$boost=1,site=paecon.net
 /ojs/index.php/te/article/$boost=1,site=econtheory.org
+/view/journals/$boost=1,site=elibrary.imf.org
+/digest/$boost=1,site=nber.org
+/papers/$boost=1,site=nber.org
+/reporter/$boost=1,site=nber.org
+/brd/$boost=1,site=nber.org
+/programs-projects/$boost=1,site=nber.org
+/bh/$boost=1,site=nber.org
+/be/$boost=1,site=nber.org
+
 
 ! Open Access Journals
 /bjoc/articles/$boost=1,site=beilstein-journals.org
@@ -84,6 +97,8 @@ $boost=1,site=medsci.org
 /eid/article/$boost=1,site=wwwnc.cdc.gov
 /articles/view/$boost=1,site=jci.org
 /en/content/$boost=1,site=pubs.rsc.org
+/journals/$boost=1,site=intechopen.com
+$boost=1,site=papers.ssrn.com
 
 ! MSD
 
@@ -99,3 +114,4 @@ $boost=1,site=libretexts.org
 $boost=1,site=milneopentextbooks.org
 $boost=1,site=open.umn.edu
 $boost=1,site=openstax.org
+/chapters/$boost=1,site=intechopen.com
