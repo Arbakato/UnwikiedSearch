@@ -1,12 +1,12 @@
 ! name: Unwikied Search 
-! description: (Last update: 2024.09.25) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
+! description: (Last update: 2024.09.26) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
-! license: GPL-3.0 license
-! version: 2024.09.25
+! license: GPL-3.0
+! version: 2024.09.26
 
 ! Discards everything
 $discard
@@ -20,14 +20,15 @@ $boost=1,site=nih.gov
 $boost=1,site=medlineplus.gov
 $boost=1,site=scholarpedia.org
 $boost=1,site=mayoclinic.org
-$boost=1,site=wikidoc.org
+$boost=2,site=wikidoc.org
 $boost=1,site=science.nasa.gov
 
 ! Encyclopedias. Should be on top since they work as introductions to certain topics.
 $boost=2,site=britannica.com
+/dictionary/$discard,site=britannica.com
 $boost=2,site=encyclopedia.com
 $boost=2,site=biography.com
-$boost=2,site=eol.org
+$boost=1,site=eol.org
 $boost=1,site=plato.stanford.edu
 
 ! History
@@ -48,7 +49,7 @@ $boost=1,site=aeaweb.org
 $boost=1,site=thelancet.com
 
 ! Is academia.edu good? At least it's free...
-$downrank=1,site=academia.edu
+$downrank=2,site=academia.edu
 
 ! Testing these journals for now...
 /document/doi/$boost=1,site=egruyter.com
@@ -99,13 +100,14 @@ $boost=1,site=medsci.org
 /en/content/$boost=1,site=pubs.rsc.org
 /journals/$boost=1,site=intechopen.com
 $boost=1,site=papers.ssrn.com
+/p/$boost=1,site=paperity.org
 
 ! MSD
 
 /monographs/$boost=1,site=merckindex.rsc.org
 /proffesional/$boost=4,site=msdmanuals.com
 /home/$boost=3,site=msdmanuals.com
-$boost=4,site=msdvetmanual.com
+$boost=2,site=msdvetmanual.com
 
 
 ! Open Access Books
@@ -114,4 +116,9 @@ $boost=1,site=libretexts.org
 $boost=1,site=milneopentextbooks.org
 $boost=1,site=open.umn.edu
 $boost=1,site=openstax.org
-/chapters/$boost=1,site=intechopen.com
+/chapters/$boost=2,site=intechopen.com
+
+
+! Discards Spanish results that sometimes clogs the search when not required.
+
+/es/$discard
