@@ -1,12 +1,12 @@
 ! name: Unwikied Search 
-! description: (Last update: 2025.11.07) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
+! description: (Last update: 2025.11.07-1) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
 ! license: GPL-3.0
-! version: 2025.11.07
+! version: 2025.11.07-1
 
 ! Discards everything
 $discard
@@ -120,32 +120,32 @@ $boost=1,site=openstax.org
 
 ! November 2025
 
-$boost=3,site=pmc.ncbi.nlm.nih.gov
+$boost=2,site=pmc.ncbi.nlm.nih.gov
 $boost=2,site=europepmc.org
-$boost=3,site=clinicaltrials.gov
-$boost=2,site=who.int
-$boost=2,site=nice.org.uk
+$boost=2,site=clinicaltrials.gov
+$boost=1,site=who.int
+$boost=1,site=nice.org.uk
 
-$boost=3,site=arxiv.org
+$boost=2,site=arxiv.org
 $boost=2,site=ui.adsabs.harvard.edu
 
 $boost=2,site=webbook.nist.gov
 $boost=2,site=pubchem.ncbi.nlm.nih.gov
-$boost=2,site=chemspider.com
+$boost=1,site=chemspider.com
 
-$boost=2,site=doaj.org
+$boost=1,site=doaj.org
 $boost=1,site=crossref.org
 
-$boost=2,site=loc.gov
-$boost=2,site=archives.gov
-$boost=2,site=bl.uk
-/toah/$boost=2,site=metmuseum.org
+$boost=1,site=loc.gov
+$boost=1,site=archives.gov
+$boost=1,site=bl.uk
+/toah/$boost=1,site=metmuseum.org
 
-$boost=2,site=oecd.org
-$boost=2,site=openknowledge.worldbank.org
-$boost=2,site=fred.stlouisfed.org
-$boost=2,site=bea.gov
-$boost=2,site=bls.gov
+$boost=1,site=oecd.org
+$boost=1,site=openknowledge.worldbank.org
+$boost=1,site=fred.stlouisfed.org
+$boost=1,site=bea.gov
+$boost=1,site=bls.gov
 
 ! Discards Spanish results that sometimes clogs the search when not required.
 
