@@ -1,5 +1,5 @@
 ! name: Unwikied Search 
-! description: (Last update: 2025.11.07-1) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
+! description: (Last update: 2025.11.11) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
@@ -22,6 +22,7 @@ $boost=1,site=scholarpedia.org
 $boost=1,site=mayoclinic.org
 $boost=2,site=wikidoc.org
 $boost=1,site=science.nasa.gov
+/cdsr/doi/,site=cochranelibrary.com
 
 ! Encyclopedias. Should be on top since they work as introductions to certain topics.
 $boost=2,site=britannica.com
@@ -47,6 +48,8 @@ $boost=1,site=researchgate.net
 $boost=1,site=sciencedirect.com
 $boost=1,site=aeaweb.org
 $boost=1,site=thelancet.com
+$boost=1,site=papers.ssrn.com
+
 
 ! Is academia.edu good? At least it's free...
 ! $downrank=5,site=academia.edu
@@ -64,6 +67,12 @@ $boost=1,site=phys.org
 /article/$boost=1,site=scientificamerican.com
 /content/article/$boost=1,site=science.org
 /article/$boost=1,site=sciencenews.org
+
+! Engineering and technology magazine
+$boost=1,site=spectrum.ieee.org
+
+! Engineering and technology journals
+/document/$boost=2,site=ieeexplore.ieee.org
 
 ! Other sites. Boost 2 because they tend to be lower on the list.
 $boost=2,site=heraldry-wiki.com
@@ -146,6 +155,9 @@ $boost=1,site=openknowledge.worldbank.org
 $boost=1,site=fred.stlouisfed.org
 $boost=1,site=bea.gov
 $boost=1,site=bls.gov
+
+$boost=1,site=ourworldindata.org
+/abs/$boost=1,site=ui.adsabs.harvard.edu
 
 ! Discards Spanish results that sometimes clogs the search when not required.
 
