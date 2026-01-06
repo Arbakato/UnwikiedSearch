@@ -1,12 +1,12 @@
 ! name: Unwikied Search 
-! description: (Last update: 2026.01.05) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
+! description: (Last update: 2026.01.05-1) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
 ! license: GPL-3.0
-! version: 2026.01.05
+! version: 2026.01.05-1
 
 ! Discards everything
 $discard
@@ -170,7 +170,7 @@ $boost=1,site=ipm.ucanr.edu
 
 /works/$boost=1,site=core.ac.uk
 /reader/$boost=1,site=core.ac.uk
-/abs/$boost=1,scixplorer.org
+/abs/$boost=1,site=scixplorer.org
 
 $boost=1,site=ourworldindata.org
 /abs/$boost=1,site=ui.adsabs.harvard.edu
