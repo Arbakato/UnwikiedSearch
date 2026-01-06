@@ -1,12 +1,12 @@
 ! name: Unwikied Search 
-! description: (Last update: 2025.11.11) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
+! description: (Last update: 2026.01.05) A "replacement" of Wikipedia. Returns results from reputable sources: encyclopedias, biography sites, journals, research sites, science/specialized magazines. The idea is to get a resource for people looking to rely less on Wikipedia and expand onto other sources. Though part of the idea is to also compile sources that are used on Wikipedia itself. There is no specific field, but since this is a tool I use, it mostly has medical and history sources. A constant work in progress, new sites can be added or changed depending on feedback. Feel free to pass by the Github.
 ! public: true
 ! author: Arbakato
 ! avatar: 14661d
 ! homepage: https://github.com/Arbakato/UnwikiedSearch
 ! issues: https://github.com/Arbakato/UnwikiedSearch/issues
 ! license: GPL-3.0
-! version: 2025.11.07-1
+! version: 2026.01.05
 
 ! Discards everything
 $discard
@@ -18,11 +18,15 @@ $discard
 $boost=1,site=ebsco.com
 $boost=1,site=nih.gov
 $boost=1,site=medlineplus.gov
+/article/$boost=1,site=link.springer.com
 $boost=1,site=scholarpedia.org
 $boost=1,site=mayoclinic.org
-$boost=2,site=wikidoc.org
+$boost=1,site=wikidoc.org
 $boost=1,site=science.nasa.gov
 /cdsr/doi/,site=cochranelibrary.com
+
+! Biology
+/doi/$boost=1,site=journals.asm.org
 
 ! Encyclopedias. Should be on top since they work as introductions to certain topics.
 $boost=2,site=britannica.com
@@ -142,7 +146,7 @@ $boost=2,site=webbook.nist.gov
 $boost=2,site=pubchem.ncbi.nlm.nih.gov
 $boost=1,site=chemspider.com
 
-$boost=1,site=doaj.org
+$boost=2,site=doaj.org
 $boost=1,site=crossref.org
 
 $boost=1,site=loc.gov
@@ -155,6 +159,18 @@ $boost=1,site=openknowledge.worldbank.org
 $boost=1,site=fred.stlouisfed.org
 $boost=1,site=bea.gov
 $boost=1,site=bls.gov
+
+! Horticulture
+/plants/$boost=1,site=rhs.org.uk
+/fruit/$boost=1,site=rhs.org.uk
+/PlantFinder/$boost=1,site=missouribotanicalgarden.org
+$boost=1,site=ipm.ucanr.edu
+
+! January 2026
+
+/works/$boost=1,site=core.ac.uk
+/reader/$boost=1,site=core.ac.uk
+/abs/$boost=1,scixplorer.org
 
 $boost=1,site=ourworldindata.org
 /abs/$boost=1,site=ui.adsabs.harvard.edu
